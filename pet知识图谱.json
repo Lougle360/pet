@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "title": "PET 父母效能训练知识图谱",
+    "description": "Parent Effectiveness Training 的核心概念、工具、流程及其关系的结构化表示",
+    "author": "Thomas Gordon",
+    "version": "1.0"
+  },
+  "nodes": [
+    {
+      "id": "pet",
+      "label": "PET 父母效能训练",
+      "type": "system",
+      "description": "由托马斯·戈登博士创立的亲子沟通方法论，强调互相尊重、民主养育、双赢解决冲突"
+    },
+    {
+      "id": "behavior_window",
+      "label": "行为窗口",
+      "type": "framework",
+      "description": "PET 的核心诊断工具。将孩子的所有行为想象成一扇窗户，用一条'接纳线'将窗口分为可接受区和不可接受区",
+      "factors": ["父母自身状态", "孩子特点", "当前情境"]
+    },
+    {
+      "id": "acceptance_line",
+      "label": "接纳线",
+      "type": "concept",
+      "description": "行为窗口中划分可接受与不可接受行为的动态界线，会随父母状态、孩子特点、情境三个因素上下浮动"
+    },
+    {
+      "id": "problem_ownership",
+      "label": "问题归属",
+      "type": "framework",
+      "description": "根据行为窗口的判断结果，确定问题属于谁，从而选择对应的沟通工具"
+    },
+    {
+      "id": "child_owns_problem",
+      "label": "孩子拥有问题",
+      "type": "zone",
+      "description": "孩子遇到困扰，但其行为不影响父母的需求。此时父母应当帮助者角色",
+      "trigger": "行为可接受，但孩子有困扰"
+    },
+    {
+      "id": "no_problem",
+      "label": "无问题区",
+      "type": "zone",
+      "description": "双方需求都被满足，关系和谐。此时适合自由沟通、享受关系，并运用预防技巧",
+      "trigger": "行为可接受，孩子也无困扰"
+    },
+    {
+      "id": "parent_owns_problem",
+      "label": "父母拥有问题",
+      "type": "zone",
+      "description": "孩子的行为切实影响到父母的需求，父母需要主动表达。此时父母应当发起者角色",
+      "trigger": "行为不可接受"
+    },
+    {
+      "id": "active_listening",
+      "label": "积极倾听",
+      "type": "tool",
+      "description": "当孩子拥有问题时使用的核心技巧，通过反映孩子的情绪和需求来帮助孩子自己解决问题",
+      "steps": [
+        {"order": 1, "action": "暂停", "detail": "放下自己的想法和情绪，全心关注孩子"},
+        {"order": 2, "action": "接收", "detail": "倾听言语信息和非言语信号（表情、语气、肢体语言）"},
+        {"order": 3, "action": "解码", "detail": "理解言语背后真正的情绪和需求"},
+        {"order": 4, "action": "反馈", "detail": "用自己的话表达对孩子情绪和需求的理解（通常以'你'开头）"},
+        {"order": 5, "action": "核实", "detail": "让孩子确认或修正你的理解，形成闭环"}
+      ]
+    },
+    {
+      "id": "confrontive_i_message",
+      "label": "面质性我-信息",
+      "type": "tool",
+      "description": "当父母拥有问题且孩子行为直接影响父母需求时，用非指责的方式表达自己的感受",
+      "components": [
+        {"order": 1, "element": "行为", "detail": "客观描述孩子做了什么（不带评判）"},
+        {"order": 2, "element": "感受", "detail": "表达真实的初级情绪（担心、失望、害怕等，而非愤怒）"},
+        {"order": 3, "element": "影响", "detail": "说明该行为对父母造成的具体、有形的影响"}
+      ],
+      "example": "当你没有按时回家也没有打电话时（行为），我很担心（感受），因为我无法安心工作（影响）"
+    },
+    {
+      "id": "method_three",
+      "label": "第三法（没有输家的冲突解决）",
+      "type": "tool",
+      "description": "当亲子双方的需求发生冲突时，通过六个步骤寻找双方都能接受的方案，实现双赢",
+      "steps": [
+        {"order": 1, "action": "界定问题", "detail": "明确双方各自的需求，而非固守各自的立场或方案"},
+        {"order": 2, "action": "头脑风暴", "detail": "双方自由提出各种可能方案，此阶段不做任何评价"},
+        {"order": 3, "action": "评估方案", "detail": "逐一讨论每个方案的可行性，双方坦诚表达接受度"},
+        {"order": 4, "action": "选择方案", "detail": "找到双方都能接受的最佳方案，确保没有人被迫妥协"},
+        {"order": 5, "action": "执行方案", "detail": "明确谁做什么、何时做、怎么做"},
+        {"order": 6, "action": "评估效果", "detail": "一段时间后回顾执行情况，必要时调整方案"}
+      ]
+    },
+    {
+      "id": "gear_shifting",
+      "label": "换挡技巧",
+      "type": "tool",
+      "description": "当父母发出我-信息后孩子产生抵触情绪时，暂时从'发送模式'切换到'倾听模式'，先接纳孩子的情绪反应，再回来表达自己的需求",
+      "pattern": "我-信息 → 孩子抵触 → 切换到积极倾听 → 情绪缓和 → 回到表达需求"
+    },
+    {
+      "id": "preventive_skills",
+      "label": "预防技巧",
+      "type": "tool_group",
+      "description": "在无问题区主动运用的技巧，旨在减少未来问题的发生"
+    },
+    {
+      "id": "preventive_i_message",
+      "label": "预防性我-信息",
+      "type": "tool",
+      "description": "提前告知孩子自己未来的需求和计划，让孩子有心理准备，减少冲突"
+    },
+    {
+      "id": "environment_modification",
+      "label": "环境调整法",
+      "type": "tool",
+      "description": "通过改变物理环境而非改变孩子来减少不可接受行为的发生"
+    },
+    {
+      "id": "three_times",
+      "label": "平衡三种时间",
+      "type": "tool",
+      "description": "合理分配三种亲子互动时间以维护健康关系",
+      "components": [
+        {"name": "活动时间", "detail": "一起做某件具体事情的时间"},
+        {"name": "一对一时间", "detail": "专注于一个孩子的高质量陪伴时间"},
+        {"name": "单独时间", "detail": "父母自己独处、恢复精力的时间"}
+      ]
+    },
+    {
+      "id": "twelve_roadblocks",
+      "label": "12类沟通绊脚石",
+      "type": "anti_pattern",
+      "description": "托马斯·戈登总结的12种阻碍有效沟通的典型回应方式，在任何问题区都应避免",
+      "items": [
+        {"id": 1,  "name": "命令、指挥", "effect": "使孩子感到自己的需求不重要"},
+        {"id": 2,  "name": "威胁、警告", "effect": "引发恐惧或反叛"},
+        {"id": 3,  "name": "说教、讲道理", "effect": "让孩子产生内疚或防御"},
+        {"id": 4,  "name": "建议、给方案", "effect": "暗示孩子没有能力自己解决问题"},
+        {"id": 5,  "name": "说服、逻辑论证", "effect": "让孩子觉得自己不够聪明"},
+        {"id": 6,  "name": "评判、批评", "effect": "降低自我价值感"},
+        {"id": 7,  "name": "归类、贴标签", "effect": "固化负面自我认知"},
+        {"id": 8,  "name": "分析、诊断", "effect": "让孩子感到被看穿、不安全"},
+        {"id": 9,  "name": "安慰、同情", "effect": "否认孩子真实感受的强度"},
+        {"id": 10, "name": "质问、盘问", "effect": "产生被审讯的压迫感"},
+        {"id": 11, "name": "转移、开玩笑", "effect": "让孩子觉得自己的问题不被重视"},
+        {"id": 12, "name": "表扬操控", "effect": "用正面评价控制行为，非真诚认可"}
+      ]
+    },
+    {
+      "id": "conflict_resolution_methods",
+      "label": "冲突解决三方法",
+      "type": "framework",
+      "description": "PET 对比三种冲突解决方式，推荐第三法",
+      "methods": [
+        {"name": "第一法", "alias": "父母赢", "result": "孩子输", "style": "权威型"},
+        {"name": "第二法", "alias": "孩子赢", "result": "父母输", "style": "溺爱型"},
+        {"name": "第三法", "alias": "没有输家", "result": "双方赢", "style": "民主型"}
+      ]
+    },
+    {
+      "id": "learning_stages",
+      "label": "学习四阶段",
+      "type": "framework",
+      "description": "PET 技能习得的四个阶段",
+      "stages": [
+        {"order": 1, "name": "无意识无能力", "detail": "不知道自己不知道"},
+        {"order": 2, "name": "有意识无能力", "detail": "知道但做不好，最不舒服但成长最快"},
+        {"order": 3, "name": "有意识有能力", "detail": "能做到但需要刻意提醒"},
+        {"order": 4, "name": "无意识有能力", "detail": "自然而然，成为本能"}
+      ]
+    },
+    {
+      "id": "relationship_creed",
+      "label": "人际关系信条",
+      "type": "principle",
+      "description": "PET 的核心价值观宣言：我珍视我们的关系，但我们是各自独立的个体；当你有问题时我会倾听理解；当你的行为影响我时我会坦诚表达；当我们冲突时我们寻找双赢方案"
+    },
+    {
+      "id": "parents_are_human",
+      "label": "父母是人不是神",
+      "type": "principle",
+      "description": "父母也有情绪、需求和局限，不需要也不可能做到无条件接纳所有行为。真实比一致更重要"
+    }
+  ],
+  "edges": [
+    {"from": "pet", "to": "behavior_window", "relation": "核心框架", "description": "行为窗口是 PET 的第一步诊断工具"},
+    {"from": "pet", "to": "problem_ownership", "relation": "核心框架", "description": "问题归属是 PET 的决策枢纽"},
+    {"from": "pet", "to": "relationship_creed", "relation": "价值根基", "description": "人际关系信条是 PET 全部方法论的哲学基础"},
+    {"from": "pet", "to": "parents_are_human", "relation": "底层原则", "description": "承认父母的人性是 PET 的出发点"},
+    {"from": "pet", "to": "twelve_roadblocks", "relation": "警示", "description": "全程需要避免的沟通反模式"},
+    {"from": "pet", "to": "learning_stages", "relation": "成长路径", "description": "掌握 PET 技能的四阶段进程"},
+    {"from": "pet", "to": "conflict_resolution_methods", "relation": "理论对比", "description": "三种冲突解决方法的对比，PET 推荐第三法"},
+
+    {"from": "behavior_window", "to": "acceptance_line", "relation": "包含", "description": "接纳线是行为窗口的核心分界线"},
+    {"from": "behavior_window", "to": "problem_ownership", "relation": "下一步", "description": "通过行为窗口判断后，进入问题归属的判定"},
+
+    {"from": "problem_ownership", "to": "child_owns_problem", "relation": "归属结果", "description": "行为可接受但孩子有困扰 → 孩子拥有问题"},
+    {"from": "problem_ownership", "to": "no_problem", "relation": "归属结果", "description": "行为可接受且孩子无困扰 → 无问题区"},
+    {"from": "problem_ownership", "to": "parent_owns_problem", "relation": "归属结果", "description": "行为不可接受 → 父母拥有问题"},
+
+    {"from": "child_owns_problem", "to": "active_listening", "relation": "使用工具", "description": "孩子拥有问题时，使用积极倾听帮助孩子"},
+    {"from": "no_problem", "to": "preventive_skills", "relation": "使用工具", "description": "无问题区时，运用预防技巧巩固关系"},
+    {"from": "parent_owns_problem", "to": "confrontive_i_message", "relation": "使用工具", "description": "行为直接影响父母需求时，使用面质性我-信息"},
+    {"from": "parent_owns_problem", "to": "method_three", "relation": "使用工具", "description": "双方需求冲突时，使用第三法"},
+
+    {"from": "confrontive_i_message", "to": "gear_shifting", "relation": "衔接", "description": "当我-信息引发孩子抵触时，启用换挡技巧"},
+    {"from": "gear_shifting", "to": "active_listening", "relation": "临时切换", "description": "换挡时暂时使用积极倾听接纳孩子的情绪"},
+    {"from": "gear_shifting", "to": "confrontive_i_message", "relation": "回归", "description": "情绪缓和后回到我-信息表达需求"},
+    {"from": "gear_shifting", "to": "method_three", "relation": "升级", "description": "若换挡后需求仍冲突，升级到第三法"},
+
+    {"from": "preventive_skills", "to": "preventive_i_message", "relation": "包含", "description": "预防性我-信息是预防技巧之一"},
+    {"from": "preventive_skills", "to": "environment_modification", "relation": "包含", "description": "环境调整法是预防技巧之一"},
+    {"from": "preventive_skills", "to": "three_times", "relation": "包含", "description": "平衡三种时间是预防技巧之一"},
+
+    {"from": "conflict_resolution_methods", "to": "method_three", "relation": "推荐", "description": "PET 推荐第三法作为冲突解决的首选方式"},
+
+    {"from": "active_listening", "to": "twelve_roadblocks", "relation": "避免", "description": "积极倾听时必须避免12类沟通绊脚石"},
+    {"from": "confrontive_i_message", "to": "twelve_roadblocks", "relation": "避免", "description": "发送我-信息时必须避免12类沟通绊脚石"}
+  ],
+  "workflow": {
+    "description": "PET 标准操作流程",
+    "steps": [
+      {"order": 1, "action": "观察孩子的行为"},
+      {"order": 2, "action": "用行为窗口判断：行为是否可接受？"},
+      {"order": 3, "action": "确定问题归属：孩子的问题 / 无问题 / 父母的问题"},
+      {"order": 4, "action": "选择对应工具：积极倾听 / 预防技巧 / 我-信息 / 第三法"},
+      {"order": 5, "action": "执行工具的具体步骤"},
+      {"order": 6, "action": "根据反馈灵活换挡或升级工具"},
+      {"order": 7, "action": "评估效果，回到观察，形成闭环"}
+    ]
+  }
+}

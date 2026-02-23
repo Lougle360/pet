@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "title": "PET 父母效能训练流程图",
+    "description": "适用于前端流程图渲染（如 AntV X6、GoJS、React Flow、draw.io 等）的节点-边数据结构",
+    "version": "1.0"
+  },
+  "nodes": [
+    {"id": "start",       "label": "观察孩子的行为",                 "type": "start",    "group": "entry"},
+    {"id": "bw",          "label": "行为窗口",                       "type": "process",  "group": "entry"},
+    {"id": "d_accept",    "label": "行为是否可接受？",               "type": "decision", "group": "entry"},
+
+    {"id": "d_child_upset","label": "孩子是否有困扰？",              "type": "decision", "group": "ownership"},
+    {"id": "zone_child",  "label": "孩子拥有问题",                   "type": "zone",     "group": "ownership", "color": "#ffc107"},
+    {"id": "zone_none",   "label": "无问题区",                       "type": "zone",     "group": "ownership", "color": "#28a745"},
+    {"id": "zone_parent", "label": "父母拥有问题",                   "type": "zone",     "group": "ownership", "color": "#dc3545"},
+
+    {"id": "al",          "label": "积极倾听",                       "type": "tool",     "group": "child_branch"},
+    {"id": "al_1",        "label": "① 暂停：放下自己的想法",         "type": "step",     "group": "child_branch"},
+    {"id": "al_2",        "label": "② 接收：听言语和非言语信号",     "type": "step",     "group": "child_branch"},
+    {"id": "al_3",        "label": "③ 解码：理解背后的情绪与需求",   "type": "step",     "group": "child_branch"},
+    {"id": "al_4",        "label": "④ 反馈：用自己的话表达理解",     "type": "step",     "group": "child_branch"},
+    {"id": "al_5",        "label": "⑤ 核实：孩子确认或修正",         "type": "step",     "group": "child_branch"},
+    {"id": "d_al_ok",     "label": "孩子问题是否解决？",             "type": "decision", "group": "child_branch"},
+
+    {"id": "enjoy",       "label": "自由沟通·享受关系",              "type": "process",  "group": "none_branch"},
+    {"id": "prevent",     "label": "预防技巧",                       "type": "tool",     "group": "none_branch"},
+    {"id": "p_1",         "label": "预防性我-信息",                  "type": "step",     "group": "none_branch"},
+    {"id": "p_2",         "label": "环境调整法",                     "type": "step",     "group": "none_branch"},
+    {"id": "p_3",         "label": "平衡三种时间：活动/一对一/单独", "type": "step",     "group": "none_branch"},
+
+    {"id": "d_confront",  "label": "行为是否影响父母需求？",         "type": "decision", "group": "parent_branch"},
+    {"id": "im",          "label": "面质性我-信息",                  "type": "tool",     "group": "parent_branch"},
+    {"id": "im_1",        "label": "① 行为：客观描述孩子做了什么",   "type": "step",     "group": "parent_branch"},
+    {"id": "im_2",        "label": "② 感受：表达真实的初级情绪",     "type": "step",     "group": "parent_branch"},
+    {"id": "im_3",        "label": "③ 影响：说明对父母的具体影响",   "type": "step",     "group": "parent_branch"},
+    {"id": "d_im_ok",     "label": "孩子是否改变行为？",             "type": "decision", "group": "parent_branch"},
+
+    {"id": "shift",       "label": "换挡技巧",                       "type": "tool",     "group": "shift_branch"},
+    {"id": "shift_al",    "label": "暂时切换到积极倾听，接纳孩子情绪","type": "step",     "group": "shift_branch"},
+    {"id": "shift_back",  "label": "回到表达自己的需求",             "type": "step",     "group": "shift_branch"},
+    {"id": "d_shift_ok",  "label": "问题是否解决？",                 "type": "decision", "group": "shift_branch"},
+
+    {"id": "m3",          "label": "第三法：没有输家的冲突解决",      "type": "tool",     "group": "method3"},
+    {"id": "m3_1",        "label": "步骤一：界定问题（明确双方需求）","type": "step",     "group": "method3"},
+    {"id": "m3_2",        "label": "步骤二：头脑风暴（不做评价）",   "type": "step",     "group": "method3"},
+    {"id": "m3_3",        "label": "步骤三：评估方案（讨论可行性）", "type": "step",     "group": "method3"},
+    {"id": "m3_4",        "label": "步骤四：选择方案（双方都接受）", "type": "step",     "group": "method3"},
+    {"id": "m3_5",        "label": "步骤五：执行方案（谁/做什么/何时/如何）","type": "step", "group": "method3"},
+    {"id": "m3_6",        "label": "步骤六：评估效果（回顾并调整）", "type": "step",     "group": "method3"},
+
+    {"id": "warn",        "label": "⚠ 避免 12 类沟通绊脚石",         "type": "warning",  "group": "global"},
+    {"id": "warn_list",   "label": "命令·威胁·说教·建议·评判·归类·分析·安慰·质问·转移·讽刺·表扬操控", "type": "warning_detail", "group": "global"}
+  ],
+  "edges": [
+    {"from": "start",      "to": "bw",          "label": ""},
+    {"from": "bw",         "to": "d_accept",    "label": ""},
+
+    {"from": "d_accept",   "to": "d_child_upset","label": "可接受",       "type": "yes"},
+    {"from": "d_accept",   "to": "zone_parent", "label": "不可接受",     "type": "no"},
+
+    {"from": "d_child_upset","to": "zone_child", "label": "是",           "type": "yes"},
+    {"from": "d_child_upset","to": "zone_none",  "label": "否",           "type": "no"},
+
+    {"from": "zone_none",  "to": "enjoy",       "label": ""},
+    {"from": "enjoy",      "to": "prevent",     "label": ""},
+    {"from": "prevent",    "to": "p_1",         "label": "",             "type": "fork"},
+    {"from": "prevent",    "to": "p_2",         "label": "",             "type": "fork"},
+    {"from": "prevent",    "to": "p_3",         "label": "",             "type": "fork"},
+
+    {"from": "zone_child", "to": "al",          "label": ""},
+    {"from": "al",         "to": "al_1",        "label": ""},
+    {"from": "al_1",       "to": "al_2",        "label": ""},
+    {"from": "al_2",       "to": "al_3",        "label": ""},
+    {"from": "al_3",       "to": "al_4",        "label": ""},
+    {"from": "al_4",       "to": "al_5",        "label": ""},
+    {"from": "al_5",       "to": "d_al_ok",     "label": ""},
+    {"from": "d_al_ok",    "to": "start",       "label": "是，已解决",   "type": "loop_back"},
+    {"from": "d_al_ok",    "to": "al",          "label": "否，继续倾听", "type": "loop_back"},
+
+    {"from": "zone_parent","to": "d_confront",  "label": ""},
+    {"from": "d_confront", "to": "im",          "label": "直接影响",     "type": "yes"},
+    {"from": "d_confront", "to": "m3",          "label": "需求冲突",     "type": "no"},
+
+    {"from": "im",         "to": "im_1",        "label": ""},
+    {"from": "im_1",       "to": "im_2",        "label": ""},
+    {"from": "im_2",       "to": "im_3",        "label": ""},
+    {"from": "im_3",       "to": "d_im_ok",     "label": ""},
+    {"from": "d_im_ok",    "to": "start",       "label": "是，行为改变", "type": "loop_back"},
+    {"from": "d_im_ok",    "to": "shift",       "label": "产生抵触情绪", "type": "escalate"},
+
+    {"from": "shift",      "to": "shift_al",    "label": ""},
+    {"from": "shift_al",   "to": "shift_back",  "label": ""},
+    {"from": "shift_back", "to": "d_shift_ok",  "label": ""},
+    {"from": "d_shift_ok", "to": "start",       "label": "是，已解决",   "type": "loop_back"},
+    {"from": "d_shift_ok", "to": "m3",          "label": "需求仍然冲突", "type": "escalate"},
+
+    {"from": "m3",         "to": "m3_1",        "label": ""},
+    {"from": "m3_1",       "to": "m3_2",        "label": ""},
+    {"from": "m3_2",       "to": "m3_3",        "label": ""},
+    {"from": "m3_3",       "to": "m3_4",        "label": ""},
+    {"from": "m3_4",       "to": "m3_5",        "label": ""},
+    {"from": "m3_5",       "to": "m3_6",        "label": ""},
+    {"from": "m3_6",       "to": "start",       "label": "回到观察",     "type": "loop_back"},
+
+    {"from": "bw",         "to": "warn",        "label": "全程警示",     "type": "dashed"},
+    {"from": "warn",       "to": "warn_list",   "label": "",             "type": "dashed"}
+  ],
+  "groups": [
+    {"id": "entry",         "label": "入口：观察与判断",     "color": "#f0f0f0"},
+    {"id": "ownership",     "label": "问题归属判定",         "color": "#e8e8e8"},
+    {"id": "none_branch",   "label": "无问题区 → 预防",     "color": "#d4edda"},
+    {"id": "child_branch",  "label": "孩子的问题 → 积极倾听","color": "#fff3cd"},
+    {"id": "parent_branch", "label": "父母的问题 → 我-信息", "color": "#f8d7da"},
+    {"id": "shift_branch",  "label": "换挡技巧",             "color": "#e2e3f1"},
+    {"id": "method3",       "label": "第三法六步骤",         "color": "#cce5ff"},
+    {"id": "global",        "label": "全局警示",             "color": "#fff3e0"}
+  ],
+  "node_types": {
+    "start":          {"shape": "rounded_rect", "description": "流程起点/终点"},
+    "process":        {"shape": "rect",         "description": "普通处理节点"},
+    "decision":       {"shape": "diamond",      "description": "判断/分支节点"},
+    "zone":           {"shape": "rect",         "description": "问题归属区域，带颜色标识"},
+    "tool":           {"shape": "rect",         "description": "PET 工具/方法"},
+    "step":           {"shape": "rect",         "description": "工具内的具体步骤"},
+    "warning":        {"shape": "parallelogram","description": "警示/提醒节点"},
+    "warning_detail": {"shape": "rect",         "description": "警示详情"}
+  },
+  "edge_types": {
+    "yes":       {"style": "solid",  "description": "肯定分支"},
+    "no":        {"style": "solid",  "description": "否定分支"},
+    "fork":      {"style": "solid",  "description": "并行分支（一对多）"},
+    "loop_back": {"style": "solid",  "description": "回到流程起点（闭环）"},
+    "escalate":  {"style": "solid",  "description": "升级到下一工具"},
+    "dashed":    {"style": "dashed", "description": "辅助关联（非流程主线）"}
+  }
+}
